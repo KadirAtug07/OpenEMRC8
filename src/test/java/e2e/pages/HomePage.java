@@ -1,2 +1,4 @@
-package e2e.pages;public class HomePage {
+package e2e.pages;
+
+public class HomePage {
 }
