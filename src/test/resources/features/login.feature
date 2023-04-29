@@ -29,3 +29,12 @@ Feature: Login Page Test Scenarios
         And User selects language as "English (Australian)"
         Then User clicks login button
         And User gets user friendly error message as "Invalid username or password"
+
+        @smoke3
+        Scenario: Login with invalid password and invalid username
+          Given User navigates to website and verify login page title as "OpenEMR Login"
+          When User enters invalid username
+          Then User enters invalid password
+          And User selects language as "English (Australian)"
+          Then User clicks login button
+          And User gets user friendly error message as "Invalid username or password"

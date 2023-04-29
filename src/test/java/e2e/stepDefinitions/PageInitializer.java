@@ -2,6 +2,7 @@ package e2e.stepDefinitions;
 
 import e2e.pages.AdminPage;
 import e2e.pages.HomePage;
+import e2e.pages.LogOutPage;
 import e2e.pages.LoginPage;
 
 public class PageInitializer {
@@ -10,6 +11,7 @@ public class PageInitializer {
     public static LoginPage loginPage;
     public static HomePage homePage;
     public static AdminPage adminPage;
+    public static LogOutPage logOutPage;
 
 
 
@@ -19,5 +21,6 @@ public class PageInitializer {
         loginPage = new LoginPage();
         homePage = new HomePage();
         adminPage = new AdminPage();
+        logOutPage = new LogOutPage();
     }
 }
