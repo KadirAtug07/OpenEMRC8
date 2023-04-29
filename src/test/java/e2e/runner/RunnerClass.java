@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/",
         glue = "e2e/stepDefinitions",
         tags = "@smoke",
-        dryRun = true,
+        dryRun = false,
         plugin = {
                 "pretty",
                 "rerun:target/rerun.txt",

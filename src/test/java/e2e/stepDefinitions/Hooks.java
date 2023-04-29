@@ -14,6 +14,7 @@ public class Hooks extends CommonMethods {
 
      @After
     public void tearDown() {
-         closeBrowser();
+
+         //closeBrowser();
      }
 }

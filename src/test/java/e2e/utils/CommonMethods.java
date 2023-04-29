@@ -3,8 +3,11 @@ package e2e.utils;
 import e2e.stepDefinitions.PageInitializer;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -35,4 +38,17 @@ public class CommonMethods extends PageInitializer {
     public static void closeBrowser() {
         driver.quit();
     }
+
+    public static WebDriverWait getWait() {
+        WebDriverWait webDriverWait=new WebDriverWait(driver,Constants.Explicit_Wait);
+        return webDriverWait;
+    }
+    public static void waitForClickable(WebElement element) {
+        getWait().until(ExpectedConditions.elementToBeClickable(element));
+    }
+    public static void click(WebElement element) {
+        waitForClickable(element);
+        element.click();
+    }
+
 }

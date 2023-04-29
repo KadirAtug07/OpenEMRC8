@@ -1,9 +1,13 @@
 package e2e.pages;
 
 import e2e.utils.CommonMethods;
+import e2e.utils.ConfigReader;
+import e2e.utils.Constants;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class LoginPage extends CommonMethods {
 
@@ -26,6 +30,20 @@ public class LoginPage extends CommonMethods {
 
     public String loginPageTitle() {
         return driver.getTitle();
+    }
+    public void setUserName() {
+        userName.sendKeys(ConfigReader.getProperties("username"));
+    }
+    public void setPassword() {
+        password.sendKeys(ConfigReader.getProperties("password"));
+    }
+    public void setLanguage(String selectLanguage) {
+        Select select=new Select(language);
+        select.selectByVisibleText(selectLanguage);
+    }
+
+    public void setLoginButton() {
+        click(loginButton);
     }
 
 
