@@ -25,6 +25,8 @@ public class LoginPage extends CommonMethods {
     private WebElement language;
     @FindBy(id = "login-button")
     private WebElement loginButton;
+    @FindBy(xpath = "//div[contains(text(),'Invalid username or password')]")
+    private WebElement errorMessage;
 
 
 
@@ -44,6 +46,15 @@ public class LoginPage extends CommonMethods {
 
     public void setLoginButton() {
         click(loginButton);
+    }
+    public void setInvalidUsername() {
+        userName.sendKeys("");
+    }
+    public String setErrorMessage() {
+        return errorMessage.getText();
+    }
+    public void setInvalidPassword() {
+        password.sendKeys("");
     }
 
 

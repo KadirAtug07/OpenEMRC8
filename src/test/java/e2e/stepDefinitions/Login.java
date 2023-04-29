@@ -36,4 +36,16 @@ public class Login extends CommonMethods {
     public void user_verifies_home_page_title_as(String homePageTitle) {
        Assert.assertEquals(homePageTitle,homePage.homePageTitle());
     }
+    @When("User enters invalid username")
+    public void user_enters_invalid_username() {
+       loginPage.setInvalidUsername();
+    }
+    @Then("User gets user friendly error message as {string}")
+    public void user_gets_user_friendly_error_message_as(String errorMessage) {
+       Assert.assertEquals(errorMessage,loginPage.setErrorMessage());
+    }
+    @Then("User enters invalid password")
+    public void user_enters_invalid_password() {
+       loginPage.setInvalidPassword();
+    }
 }
